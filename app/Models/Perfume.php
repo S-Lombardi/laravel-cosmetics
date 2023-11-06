@@ -23,4 +23,9 @@ class Perfume extends Model
         'user_id',
 
     ];
+
+    //RELAZIONE ELOQUENT, consente di accedere all'utente associato a un profumo
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
