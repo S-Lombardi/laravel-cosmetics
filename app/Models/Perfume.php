@@ -22,5 +22,5 @@ class Perfume extends Model
         'quantity_evailable',
         'user_id',
 
-    ]
+    ];
 }

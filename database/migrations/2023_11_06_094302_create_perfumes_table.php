@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('perfumes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
             $table->string('name');
             $table->text('description');
             $table->unsignedInteger('volume_ml'); //solo numeri interi non negativi
@@ -24,7 +25,10 @@ return new class extends Migration
             $table->string('heart_notes'); //note di cuore
             $table->string('base_notes'); //note di fondo 
             $table->float('price', 5, 2);
-            $table->unsignedInteger('quantity_evailable');
+            $table->unsignedInteger('quantity_available');
+            // Chiave esterna per l'utente che ha creato il profumo
+            $table->unsignedBigInteger('user_id'); 
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
