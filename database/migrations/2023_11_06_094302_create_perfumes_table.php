@@ -26,9 +26,7 @@ return new class extends Migration
             $table->string('base_notes'); //note di fondo 
             $table->float('price', 5, 2);
             $table->unsignedInteger('quantity_available');
-            // Chiave esterna per l'utente che ha creato il profumo
-            $table->unsignedBigInteger('user_id'); 
-            $table->foreign('user_id')->references('id')->on('users');
+            
         });
     }
 

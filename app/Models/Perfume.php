@@ -20,7 +20,6 @@ class Perfume extends Model
         'base_notes',
         'price',
         'quantity_evailable',
-        'user_id',
 
     ];
 
