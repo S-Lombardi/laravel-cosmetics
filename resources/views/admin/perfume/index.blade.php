@@ -13,31 +13,46 @@
         <a href="{{route('admin.resturants')}}" class="btn button_delive_two">Torna al men&uacute;</a>
     </div> --}}
 
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body pb-0">
-                <table class="table m-0">
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                Nome Profumo
-                            </th>
-                            <th scope="col" class="d-none d-md-table-cell">
-                                Prezzo
-                            </th>
-                            <th scope="col" class="d-none d-md-table-cell">
-                                Quantità in magazzino
-                            </th>
-                        </tr>
-                    </thead>
-                </table>    
+   
 
+        
+        <table class="table m-0">
 
-            </div>
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Nome Profumo
+                    </th>
+                    <th scope="col" class="d-none d-md-table-cell">
+                        Prezzo
+                    </th>
+                    <th scope="col" class="d-none d-md-table-cell">
+                        Quantità in magazzino
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                @foreach($perfumes as $perfume)
+                
+                <tr>
+                    <td>{{$perfume->name}}</td>
+                    
+                    <td>{{$perfume->price}}</td>
+                    
+                    <td>{{$perfume->quantity_available}}</td>
+        
+                </tr>                    
+                @endforeach
 
-        </div>
+            </tbody>    
 
-    </div>
+        </table>  
+                
+    
+            
+ 
         
 
 </div>
+@endsection

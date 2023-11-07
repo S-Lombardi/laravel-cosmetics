@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\PerfumeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(function(){
+    Route::get('/products', [ProductController::class, 'index'])->name('product');
+    Route::resource('perfumes', PerfumeController::class);
+
+   
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

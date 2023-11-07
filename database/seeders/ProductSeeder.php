@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Product;
+//use Illuminate\Database\Product;
+use App\Models\Product;
 
 class ProductSeeder extends Seeder
 {
@@ -15,6 +16,13 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $products = ['perfume','cream','make_up','accessory'];
+        
+        foreach($products as $item){
+            $product = new Product();
+
+            $product->type = $item;
+            $product->save();
+        }
     }
 }

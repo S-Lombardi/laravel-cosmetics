@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Perfume;
 use App\Http\Requests\StorePerfumeRequest;
 use App\Http\Requests\UpdatePerfumeRequest;
+use App\Http\Controllers\Controller;
 
 class PerfumeController extends Controller
 {
@@ -15,8 +16,8 @@ class PerfumeController extends Controller
      */
     public function index()
     {
-        // $perfumes = Perfume::all();
-        // return view('perfume.index', compact('perfume'));
+       $perfumes = Perfume::all();
+        return view('admin.perfume.index', compact('perfumes'));
     }
 
     /**
