@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Perfume;
-use App\Http\Requests\StorePerfumeRequest;
-use App\Http\Requests\UpdatePerfumeRequest;
+use App\Models\Accessory;
+use App\Http\Requests\StoreAccessoryRequest;
+use App\Http\Requests\UpdateAccessoryRequest;
 
-class PerfumeController extends Controller
+class AccessoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class PerfumeController extends Controller
      */
     public function index()
     {
-        // $perfumes = Perfume::all();
-        // return view('perfume.index', compact('perfume'));
+        //
     }
 
     /**
@@ -26,16 +25,16 @@ class PerfumeController extends Controller
      */
     public function create()
     {
-        return view('perfume.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePerfumeRequest  $request
+     * @param  \App\Http\Requests\StoreAccessoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePerfumeRequest $request)
+    public function store(StoreAccessoryRequest $request)
     {
         //
     }
@@ -43,10 +42,10 @@ class PerfumeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Models\Accessory  $accessory
      * @return \Illuminate\Http\Response
      */
-    public function show(Perfume $perfume)
+    public function show(Accessory $accessory)
     {
         //
     }
@@ -54,10 +53,10 @@ class PerfumeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Models\Accessory  $accessory
      * @return \Illuminate\Http\Response
      */
-    public function edit(Perfume $perfume)
+    public function edit(Accessory $accessory)
     {
         //
     }
@@ -65,11 +64,11 @@ class PerfumeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePerfumeRequest  $request
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Http\Requests\UpdateAccessoryRequest  $request
+     * @param  \App\Models\Accessory  $accessory
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePerfumeRequest $request, Perfume $perfume)
+    public function update(UpdateAccessoryRequest $request, Accessory $accessory)
     {
         //
     }
@@ -77,10 +76,10 @@ class PerfumeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Models\Accessory  $accessory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perfume $perfume)
+    public function destroy(Accessory $accessory)
     {
         //
     }

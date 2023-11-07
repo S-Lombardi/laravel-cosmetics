@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
 
-class Perfume extends Model
+class MakeUp extends Model
 {
     use HasFactory;
 
@@ -15,12 +15,9 @@ class Perfume extends Model
         'name',
         'description',
         'image',
-        'volume_ml',
-        'fragrance_family',
-        'top_notes',
-        'heart_notes',
-        'base_notes',
         'price',
+        'color',
+        'category',
         'quantity_available',
 
     ];
@@ -29,5 +26,4 @@ class Perfume extends Model
     public function product(){
         return $this->belongsTo(Product::class);
     }
-
 }

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Perfume;
-use App\Http\Requests\StorePerfumeRequest;
-use App\Http\Requests\UpdatePerfumeRequest;
+use App\Models\Cream;
+use App\Http\Requests\StoreCreamRequest;
+use App\Http\Requests\UpdateCreamRequest;
 
-class PerfumeController extends Controller
+class CreamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class PerfumeController extends Controller
      */
     public function index()
     {
-        // $perfumes = Perfume::all();
-        // return view('perfume.index', compact('perfume'));
+        //
     }
 
     /**
@@ -26,16 +25,16 @@ class PerfumeController extends Controller
      */
     public function create()
     {
-        return view('perfume.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePerfumeRequest  $request
+     * @param  \App\Http\Requests\StoreCreamRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePerfumeRequest $request)
+    public function store(StoreCreamRequest $request)
     {
         //
     }
@@ -43,10 +42,10 @@ class PerfumeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Models\Cream  $cream
      * @return \Illuminate\Http\Response
      */
-    public function show(Perfume $perfume)
+    public function show(Cream $cream)
     {
         //
     }
@@ -54,10 +53,10 @@ class PerfumeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Models\Cream  $cream
      * @return \Illuminate\Http\Response
      */
-    public function edit(Perfume $perfume)
+    public function edit(Cream $cream)
     {
         //
     }
@@ -65,11 +64,11 @@ class PerfumeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePerfumeRequest  $request
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Http\Requests\UpdateCreamRequest  $request
+     * @param  \App\Models\Cream  $cream
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePerfumeRequest $request, Perfume $perfume)
+    public function update(UpdateCreamRequest $request, Cream $cream)
     {
         //
     }
@@ -77,10 +76,10 @@ class PerfumeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Perfume  $perfume
+     * @param  \App\Models\Cream  $cream
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perfume $perfume)
+    public function destroy(Cream $cream)
     {
         //
     }
