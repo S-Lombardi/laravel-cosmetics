@@ -4,17 +4,16 @@
 {{-- TITOLONE --}}
 <div class="container">
     <h2 class="my-4 text-center fs-1">
-        I tuoi <span class="text-uppercase">prodotti</span>
+        I tuoi prodotti
     </h2>
 
     <div class="col-12">
-        
-        
+
         @foreach ($products as $product)
 
             @if ($product->type === 'perfume')
 
-                <a href="{{ route('admin.perfumes.index') }}">Profumi</a>
+                <a href="{{ route('admin.perfume.index') }}">Profumi</a>
 
             @elseif ($product->type === 'cream')
 

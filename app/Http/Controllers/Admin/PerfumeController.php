@@ -6,6 +6,7 @@ use App\Models\Perfume;
 use App\Http\Requests\StorePerfumeRequest;
 use App\Http\Requests\UpdatePerfumeRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PerfumeController extends Controller
 {
@@ -27,7 +28,7 @@ class PerfumeController extends Controller
      */
     public function create()
     {
-        return view('perfume.create');
+        return view('admin.perfume.create');
     }
 
     /**
@@ -38,7 +39,13 @@ class PerfumeController extends Controller
      */
     public function store(StorePerfumeRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $perfume = new Perfume();
+        $perfume->fill($form_data);
+        $perfume->save();
+
+        return redirect()->route('admin.perfume.index', compact('perfume'))->with('message', 'Creazione avvenuta con successo');
     }
 
     /**
@@ -60,7 +67,7 @@ class PerfumeController extends Controller
      */
     public function edit(Perfume $perfume)
     {
-        //
+        return view('admin.perfume.edit');
     }
 
     /**
@@ -72,7 +79,9 @@ class PerfumeController extends Controller
      */
     public function update(UpdatePerfumeRequest $request, Perfume $perfume)
     {
-        //
+        $form_data = $request->all();
+        $perfume->update($form_data);
+        return redirect()->route('admin.perfume.index', compact('perfume'));
     }
 
     /**

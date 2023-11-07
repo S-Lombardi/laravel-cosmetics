@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(function(){
     Route::get('/products', [ProductController::class, 'index'])->name('product');
-    Route::resource('perfumes', PerfumeController::class);
+    Route::resource('perfume', PerfumeController::class);
 
    
 });
