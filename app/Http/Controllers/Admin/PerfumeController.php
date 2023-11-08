@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Perfume;
+use App\Models\Product;
 use App\Http\Requests\StorePerfumeRequest;
 use App\Http\Requests\UpdatePerfumeRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\ProductController;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -30,7 +32,8 @@ class PerfumeController extends Controller
      */
     public function create()
     {
-        return view('admin.perfume.create');
+        $product = Product::where($id=1);
+        return view('admin.perfume.create',compact('product'));
     }
 
     /**

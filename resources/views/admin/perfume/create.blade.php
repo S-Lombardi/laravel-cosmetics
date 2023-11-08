@@ -15,83 +15,84 @@
                         <div class="col-sm-8">
                             <input type="text" name="name" class="form-control" required>
                         </div>
-                    </div>
+                    </div>                  
                     {{-- ml --}}
                     <div class="form-group">
-                    <label class="control-label col-sm-4  mt-4">ml *</label>
-                    <div class="col-sm-8">
-                        <input type="number" min="5" name="volume_ml" accept="image/*" class="form-control" required>
-                    </div>
+                        <label class="control-label col-sm-4  mt-4">ml *</label>
+                        <div class="col-sm-8">
+                            <input type="number" min="5" name="volume_ml" accept="image/*" class="form-control" required>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     {{-- IMMAGINE --}}
                     <div class="form-group">
-                    <label class="control-label col-sm-4 mt-4">Immagine</label>
-                    <div class="col-sm-8">
-                        <input type="file" name="image" class="form-control">
-                    </div>
+                        <label class="control-label col-sm-4 mt-4">Immagine</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="image" class="form-control">
+                        </div>
                     </div>
                     {{-- PREZZO --}}
                     <div class="form-group">
-                    <label class="control-label col-sm-4 mt-4">Prezzo *</label>
-                    <div class="col-sm-8">
-                        <input type="number" name="price" class="form-control" min="0" max="999.99" required step="0.01">
-                    </div>
+                        <label class="control-label col-sm-4 mt-4">Prezzo *</label>
+                        <div class="col-sm-8">
+                            <input type="number" name="price" class="form-control" min="0" max="999.99" required step="0.01">
+                        </div>
                     </div>
                 </div>
                 {{-- DESCRIZIONE --}}
                 <div class="col-12">
                     <div class="form-group">
-                    <label class="control-label col-sm-2 mt-4">Descrizione</label>
-                    <div class="col-sm-10">
-                        <textarea type="text" name="description" class="form-control" rows="2"></textarea>
-                    </div>
+                        <label class="control-label col-sm-2 mt-4">Descrizione</label>
+                        <div class="col-sm-10">
+                            <textarea type="text" name="description" class="form-control" rows="2"></textarea>
+                        </div>
                     </div>
                 </div>
                 {{-- FRAGRANZA --}}
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                    <label class="col-sm-4 control-label mt-4">Fragranza *</label>
-                    <div class="col-sm-8">
-                        <input type="text"  name="fragrance_family" class=" form-control" required>
-                    </div>
+                        <label class="col-sm-4 control-label mt-4">Fragranza *</label>
+                        <div class="col-sm-8">
+                            <input type="text"  name="fragrance_family" class=" form-control" required>
+                        </div>
                     </div>
                 </div>
                 {{-- NOTE DI TESTA --}}
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                    <label class="col-sm-4 control-label mt-4">Note di testa</label>
-                    <div class="col-sm-8">
-                        <input type="text" name="top_notes" class="form-control">
-                    </div>
+                        <label class="col-sm-4 control-label mt-4">Note di testa</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="top_notes" class="form-control">
+                        </div>
                     </div>
                 </div>
                 {{-- NOTE DI CUORE--}}
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                    <label class="col-sm-4 control-label mt-4">Note di cuore</label>
-                    <div class="col-sm-8">
-                        <input type="text" name="heart_notes" class="form-control" >
-                    </div>
+                        <label class="col-sm-4 control-label mt-4">Note di cuore</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="heart_notes" class="form-control" >
+                        </div>
                     </div>
                 </div>
                 {{-- NOTE DI FONDO --}}
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                    <label class="col-sm-4 control-label mt-4">Note di fondo</label>
-                    <div class="col-sm-8">
-                        <input type="text" name="base_notes" class="form-control">
-                    </div>
+                        <label class="col-sm-4 control-label mt-4">Note di fondo</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="base_notes" class="form-control">
+                        </div>
                     </div>
                 </div>
                 {{-- DISPONIBILITà MAGAZZINO--}}
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                    <label class="col-sm-4 control-label mt-4">Disponibilità in magazzino *</label>
-                    <div class="col-sm-8">
-                        <input type="number" min="0" name="quantity_available" class="form-control" required>
-                    </div>
+                        <label class="col-sm-4 control-label mt-4">Disponibilità in magazzino *</label>
+                        <input type="hidden" name="product_id" value=1>
+                        <div class="col-sm-8">
+                            <input type="number" min="0" name="quantity_available" class="form-control" required>
+                        </div>
                     </div>
                 </div>
                 {{-- PULSANTE SALVA --}}
@@ -103,8 +104,8 @@
             </form>
         </div>
     </div>
-
-
+    
+    
     <script>
 
     document.getElementById('perfume-form').addEventListener('submit', function(event) {
