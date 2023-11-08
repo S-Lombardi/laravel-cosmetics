@@ -2,9 +2,9 @@
 
 @section('content')
 {{-- TITOLONE --}}
-<div class="container">
+<div class="container mb-5">
     <h2 class="my-4 text-center fs-1">
-        Modifica i tuoi <span class="text-uppercase">profumi</span>
+        Profumi</span>
     </h2>
     
     {{-- PULSANTI NUOVO PIATTO / TORNA AL MENU --}}
@@ -42,7 +42,7 @@
 
                 <td class="text-center">
                     {{-- SHOW --}}
-                    <a href="" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="{{route('admin.perfume.show', $perfume->id)}}" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></a>
                     {{-- EDIT --}}
                     <a href="{{route('admin.perfume.edit', $perfume->id)}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
                     {{-- DELETE --}}
