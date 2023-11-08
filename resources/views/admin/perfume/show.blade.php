@@ -10,15 +10,12 @@
         <div class="col-12 col-md-6">
             {{-- IMMAGINE --}}
             @if($perfume->image)
-                <img src="{{ asset('storage/' . $perfume->image) }}" alt="Immagine del profumo">
+                <img src="{{ asset('storage/' . $perfume->image) }}" alt="Immagine del profumo" class="w-100">
             @else
                 {{-- Immagine di default se l'immagine non è disponibile --}}
-                <img src="{{ asset('img/cosmetic_default.jpg') }}" alt="Immagine di default">
+                <img src="{{ asset('img/cosmetic_default.jpg') }}" alt="Immagine di default" class="w-100">
             @endif
-        </div>
-
-        
-           
+        </div>   
 
         <div class="col-12 col-md-6 lh-lg">
             {{-- DATI --}}
