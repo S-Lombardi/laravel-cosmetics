@@ -39,7 +39,7 @@
                     <div class="form-group">
                     <label class="control-label col-sm-4 mt-4">Prezzo *</label>
                     <div class="col-sm-8">
-                        <input type="number" name="price" class="form-control" min="0" max="999.99" required step="0.01">
+                        <input type="number" name="price" class="form-control" min="0" max="999.99" required step="0.01" value="{{ $perfume->price}}">
                     </div>
                     </div>
                 </div>
