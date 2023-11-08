@@ -46,7 +46,7 @@
                     {{-- EDIT --}}
                     <a href="{{route('admin.perfume.edit', $perfume->id)}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
                     {{-- DELETE --}}
-                    <form method="POST" class="d-inline-block dish-delete-button" action="" >
+                    <form method="POST" class="d-inline-block dish-delete-button" action="{{ route('admin.perfume.destroy', $perfume->id) }}" >
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">
