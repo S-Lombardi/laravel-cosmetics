@@ -36,7 +36,7 @@
             <tr>
                 <td>{{$perfume->name}}</td>
                 
-                <td>{{$perfume->price}}</td>
+                <td>{{$perfume->price}} &euro;</td>
                 
                 <td>{{$perfume->quantity_available}}</td>
 

@@ -8,7 +8,7 @@
 
             {{-- INIZIO FORM --}}
             <h2 class="text-center my-4">Modifica i dati del profumo</h2>
-            <p class="text-center">I campi contrassegnati con il simboloo * sono obbligatori</p>
+            <p class="text-center">I campi contrassegnati con il simbolo * sono obbligatori</p>
             <form action="{{route('admin.perfume.update',$perfume->id)}}" method="POST" class="form-horizontal d-flex flex-wrap mb-5">
                 @method('PUT')
                 @csrf

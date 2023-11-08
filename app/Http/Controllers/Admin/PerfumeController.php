@@ -94,7 +94,6 @@ class PerfumeController extends Controller
     public function destroy(Perfume $perfume)
     {
         $perfume->delete();
-
         return redirect()->route('admin.perfume.index')->with('success', 'Profumo eliminato con successo.');
 
     }
