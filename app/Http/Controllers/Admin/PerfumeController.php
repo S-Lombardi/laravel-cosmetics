@@ -65,7 +65,7 @@ class PerfumeController extends Controller
      */
     public function show(Perfume $perfume)
     {
-        //dd($perfume->image);
+        
         return view('admin.perfume.show', compact('perfume'));
     }
 

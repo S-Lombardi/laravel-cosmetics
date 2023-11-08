@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('top_notes')->nullable(); //note di testa
             $table->string('heart_notes')->nullable(); //note di cuore
             $table->string('base_notes')->nullable(); //note di fondo 
-            $table->float('price', 5, 2);
+            $table->float('price', 5,2);
             $table->unsignedInteger('quantity_available');
             
         });
