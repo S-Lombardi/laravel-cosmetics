@@ -40,7 +40,6 @@ class PerfumeController extends Controller
     public function store(StorePerfumeRequest $request)
     {
         $form_data = $request->all();
-
         $perfume = new Perfume();
         $perfume->fill($form_data);
         $perfume->save();
@@ -65,9 +64,11 @@ class PerfumeController extends Controller
      * @param  \App\Models\Perfume  $perfume
      * @return \Illuminate\Http\Response
      */
-    public function edit(Perfume $perfume)
+    public function edit($id)
     {
-        return view('admin.perfume.edit');
+        //RECUPERO IL PROFUMO CON ID SPECIFICATO E LO PASSO ALLA VISTA CON COMPACT
+        $perfume = Perfume::find($id);
+        return view('admin.perfume.edit', compact('perfume'));
     }
 
     /**

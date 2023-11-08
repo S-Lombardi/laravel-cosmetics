@@ -23,7 +23,18 @@ class UpdatePerfumeRequest extends FormRequest
      */
     public function rules()
     {
-        
+        return [
+            'name' => 'required|max:255',
+            'description' => 'nullable|string',
+            'image' => 'nullable|string',
+            'volume_ml' => 'required|integer|min:0',
+            'fragrance_family' => 'required|string|max:255',
+            'top_notes' => 'nullable|string',
+            'heart_notes' => 'nullable|string',
+            'base_notes' => 'nullable|string',
+            'price' => 'required|numeric|min:0',
+            'quantity_available' => 'required|integer|min:0',
+        ];
     }
 
        

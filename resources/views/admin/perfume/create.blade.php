@@ -91,7 +91,7 @@
     
                 <div class="col-12 col-md-6">
                     <div class="form-group">
-                    <label class="col-sm-4 control-label">Profumi disponibili in magazzino</label>
+                    <label class="col-sm-4 control-label">Profumi disponibili in magazzino *</label>
                     <div class="col-sm-8">
                         <input type="number" min="0" name="quantity_available" class="form-control" required>
                     </div>

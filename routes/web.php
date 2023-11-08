@@ -24,6 +24,9 @@ Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(fu
     Route::get('/products', [ProductController::class, 'index'])->name('product');
     Route::resource('perfume', PerfumeController::class);
 
+    Route::get('/admin/perfume/{perfume}/edit', 'PerfumeController@edit')->name('admin.perfume.edit');
+
+
    
 });
 
