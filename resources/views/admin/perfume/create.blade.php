@@ -6,7 +6,7 @@
             <h2 class="text-center my-4">Aggiungi un profumo ai tuoi prodotti</h2>
             <p class="text-center">I campi contrassegnati con il simbolo * sono obbligatori</p>
             {{-- INIZIO FORM --}}
-            <form action="{{route('admin.perfume.store')}}" method="POST" class="form-horizontal d-flex flex-wrap mb-5">
+            <form action="{{route('admin.perfume.store')}}" method="POST"  class="form-horizontal d-flex flex-wrap mb-5" enctype="multipart/form-data">
                 @csrf
                 <div class="col-12 col-md-6">
                     {{-- NOME --}}
@@ -20,7 +20,7 @@
                     <div class="form-group">
                     <label class="control-label col-sm-4  mt-4">ml *</label>
                     <div class="col-sm-8">
-                        <input type="number" min="5" name="volume_ml" class="form-control" required>
+                        <input type="number" min="5" name="volume_ml" accept="image/*" class="form-control" required>
                     </div>
                     </div>
                 </div>
@@ -103,4 +103,33 @@
             </form>
         </div>
     </div>
+
+
+    <script>
+
+    document.getElementById('perfume-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Previeni la sottomissione del modulo
+
+        var formData = new FormData(this); // Ottieni i dati del modulo
+        for (var pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]); // Fai un dump dei dati nella console
+        }
+
+        // Ora puoi inviare i dati con AJAX o eseguire altre operazioni qui se necessario
+
+        // Qui puoi inviare il modulo tramite AJAX se desideri
+        // fetch('URL_del_tuo_endpoint', {
+        //     method: 'POST',
+        //     body: formData,
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log(data);
+        // });
+
+        // Oppure puoi inviare il modulo manualmente:
+        // this.submit();
+    });
+
+    </script>    
 @endsection

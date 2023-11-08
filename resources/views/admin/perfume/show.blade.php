@@ -6,14 +6,23 @@
 <div class="container">
     {{-- PULSANTE TORNA AI profumi --}}
     <a href="{{ route('admin.perfume.index') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Torna ai profumi</a>
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12 col-md-6">
             {{-- IMMAGINE --}}
-            <img src="" alt="">
+            @if($perfume->image)
+                <img src="{{ asset('storage/' . $perfume->image) }}" alt="Immagine del profumo">
+            @else
+                {{-- Immagine di default se l'immagine non è disponibile --}}
+                <img src="{{ asset('img/cosmetic_default.jpg') }}" alt="Immagine di default">
+            @endif
         </div>
+
+        
+           
 
         <div class="col-12 col-md-6 lh-lg">
             {{-- DATI --}}
+            <div>{{$perfume->image}}</div>
             <div>Nome: {{ $perfume->name }}</div>
             <div>{{ $perfume->volume_ml }} ml</div>
             <p>{{ $perfume->description }}</p>

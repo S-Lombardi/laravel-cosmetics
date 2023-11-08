@@ -8,6 +8,8 @@ use App\Http\Requests\UpdatePerfumeRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Storage;
+
 class PerfumeController extends Controller
 {
     /**
@@ -41,10 +43,18 @@ class PerfumeController extends Controller
     {
         $form_data = $request->all();
         $perfume = new Perfume();
-        $perfume->fill($form_data);
-        $perfume->save();
 
-        return redirect()->route('admin.perfume.index', compact('perfume'))->with('message', 'Creazione avvenuta con successo');
+        if($request->hasFile('image')){
+
+            $path = Storage::put('perfumes',$request->image);
+
+            $form_data['image'] = $path; 
+
+        }
+        $perfume->fill($form_data);
+        
+        $perfume->save();
+        return redirect()->route('admin.perfume.index');
     }
 
     /**
@@ -55,6 +65,7 @@ class PerfumeController extends Controller
      */
     public function show(Perfume $perfume)
     {
+        //dd($perfume->image);
         return view('admin.perfume.show', compact('perfume'));
     }
 
@@ -82,6 +93,14 @@ class PerfumeController extends Controller
     {
         $form_data = $request->all();
         $perfume->update($form_data);
+
+        //IMPOSTA IMMAGINE FORNITA DALL'UTENTE ALTRIMENTI INSERISCI IMMAGINE DEFAULT
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/img/perfumes');
+            $perfume->image = $imagePath;
+        }
+
+        $perfume->save();
         return redirect()->route('admin.perfume.index', compact('perfume'));
     }
 

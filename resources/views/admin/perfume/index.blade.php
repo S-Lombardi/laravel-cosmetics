@@ -11,6 +11,7 @@
     <div class="col-12 d-flex justify-content-between py-3 ">
         
         <a href="{{route('admin.product')}}" class="btn btn-primary">Torna ai prodotti</a>
+
         <a href="{{route('admin.perfume.create')}}" class="btn btn-primary">Aggiungi un profumo</a>
     </div>
     
@@ -54,14 +55,9 @@
                         </button>
                     </form>
                 </td>
-
             </tr>                    
             @endforeach
-
         </tbody>    
-
     </table> 
-           
-
 </div>
 @endsection

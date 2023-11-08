@@ -9,7 +9,7 @@
             {{-- INIZIO FORM --}}
             <h2 class="text-center my-4">Modifica i dati del profumo</h2>
             <p class="text-center">I campi contrassegnati con il simbolo * sono obbligatori</p>
-            <form action="{{route('admin.perfume.update',$perfume->id)}}" method="POST" class="form-horizontal d-flex flex-wrap mb-5">
+            <form action="{{route('admin.perfume.update',$perfume->id)}}" method="POST" class="form-horizontal d-flex flex-wrap mb-5" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="col-12 col-md-6">
@@ -32,7 +32,7 @@
                     <div class="form-group">
                     <label class="control-label col-sm-4 mt-4">Immagine</label>
                     <div class="col-sm-8">
-                        <input type="file" name="image" value="{{ $perfume->image }}"class="form-control">
+                        <input type="file" name="image" value="" accept="image/*"  class="form-control">
                     </div>
                     </div>
     
