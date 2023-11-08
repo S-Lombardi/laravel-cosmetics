@@ -4,6 +4,8 @@
 
 <h3 class="text-center my-5">Dettagli Profumo</h1>
 <div class="container">
+    {{-- PULSANTE TORNA AI profumi --}}
+    <a href="{{ route('admin.perfume.index') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Torna ai profumi</a>
     <div class="row">
         <div class="col-12 col-md-6">
             {{-- IMMAGINE --}}
