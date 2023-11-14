@@ -12,18 +12,18 @@ class MakeUp extends Model
 
     protected $fillable = [
         'product_id',
-        'name',
-        'description',
-        'image',
-        'price',
-        'color',
-        'category',
-        'quantity_available',
-
+        'make_up_type', // Fondotinta, ombretto, rossetto, struccante..
+        'shade',
+        'formulation',
+        'finish',
+        'waterproof',
+        'size_ml',
     ];
 
-    //DEFINISCO LE RELAZIONI CON LE ALTRE TABELLE
-    public function product(){
+    // Relazione con la tabella prodotti
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
+    
 }

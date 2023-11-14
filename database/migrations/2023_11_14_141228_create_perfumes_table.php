@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Product;
 
 return new class extends Migration
 {
@@ -18,19 +17,14 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreignId('product_id')->constrained(); // Collegate alla tabella "products"
 
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->unsignedInteger('volume_ml'); //solo numeri interi non negativi
-            $table->string('fragrance_family');
+            $table->string('fragrance')->nullable();
             $table->string('top_notes')->nullable(); //note di testa
             $table->string('heart_notes')->nullable(); //note di cuore
-            $table->string('base_notes')->nullable(); //note di fondo 
-            $table->float('price', 5,2);
-            $table->unsignedInteger('quantity_available');
+            $table->string('base_notes')->nullable(); //note di fondo
+
+            $table->unsignedInteger('volume_ml'); //intero e positivo
             
         });
     }

@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Product;
 
 return new class extends Migration
 {
@@ -18,16 +17,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreignId('product_id')->constrained(); // Collegate alla tabella "products"
 
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->float('price', 5, 2);
-            $table->string('material')->nullable();
-            $table->string('category');
-            $table->unsignedInteger('quantity_available');
+            $table->string('material'); //Piegaciglia in metallo, dischetti in cotone, ciglia finte..
+            $table->string('color')->nullable();
         });
     }
 

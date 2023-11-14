@@ -12,19 +12,16 @@ class Cream extends Model
 
     protected $fillable = [
         'product_id',
-        'name',
-        'description',
-        'image',
-        'price',
+        'body',
         'skin_type',
-        'ingredients',
-        'perfume',
         'size_ml',
-        'quantity_available',
     ];
 
-    //DEFINISCO LE RELAZIONI CON LE ALTRE TABELLE
-    public function product(){
+
+    // Relazione con la tabella prodotti
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
+    
 }

@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Product;
 
 return new class extends Migration
 {
@@ -18,16 +17,15 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreignId('product_id')->constrained(); // Collegate alla tabella "products"
 
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->float('price', 5, 2);
-            $table->string('color')->nullable();
-            $table->string('category');
-            $table->unsignedInteger('quantity_available');
+            $table->string('make_up_type'); // Fondotinta, ombretto, rossetto, struccante..
+            $table->string('shade')->nullable(); // Colore o tonalità
+            $table->string('formulation'); // Liquido, polvere, crema 
+            $table->string('finish'); // Opaco, luminoso, satinato
+            $table->boolean('waterproof'); // Indica se il prodotto è resistente all'acqua
+            $table->unsignedInteger('size_ml'); //intero e positivo
+
         });
     }
 

@@ -12,22 +12,18 @@ class Perfume extends Model
 
     protected $fillable = [
         'product_id',
-        'name',
-        'description',
-        'image',
-        'volume_ml',
-        'fragrance_family',
+        'fragrance',
         'top_notes',
         'heart_notes',
         'base_notes',
-        'price',
-        'quantity_available',
-
+        'volume_ml',
     ];
 
-    //DEFINISCO LE RELAZIONI CON LE ALTRE TABELLE
-    public function product(){
+    //Relazione con la tabella Prodotti
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
+    
 
 }

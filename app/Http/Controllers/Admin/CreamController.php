@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Cream;
 use App\Http\Requests\StoreCreamRequest;
 use App\Http\Requests\UpdateCreamRequest;
 
-class CreamController extends Controller
+class CreamController extends Controllers
 {
     /**
      * Display a listing of the resource.

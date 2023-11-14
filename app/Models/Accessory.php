@@ -10,20 +10,18 @@ class Accessory extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'product_id',
-        'name',
-        'description',
-        'image',
-        'price',
-        'material',
-        'category',
-        'quantity_available',
+        'fragrance',
+        'top_notes',
+        'heart_notes',
+        'base_notes',
+        'volume_ml',
     ];
 
-    //DEFINISCO LE RELAZIONI CON LE ALTRE TABELLE
-    public function product(){
+    // Relazione con la tabella prodotti
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
 }

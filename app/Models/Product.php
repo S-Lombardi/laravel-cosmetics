@@ -4,32 +4,32 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Perfume;
-use App\Models\Cream;
-use App\Models\Accessory;
-
-
+use App\Models\Category;
+use App\Models\User;
 
 class Product extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'type',
+        'category_id',
+        'user_id',
+        'name',
+        'description',
+        'price',
+        'stock_quantity',
     ];
 
-    //DEFINISCO LE RELAZIONI CON LE ALTRE TABELLE
-
-    public function perfumes(){
-        return $this->hasMany(Perfume::class);  
+    // Relazione con la tabella delle categorie
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
-    public function creams(){
-        return $this->hasMany(Cream::class);
+    // Relazione con la tabella degli utenti
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
-
-    public function accessories(){
-        return $this->hasMany(Accessory::class);
-    }
-
 
 }
